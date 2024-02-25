@@ -14,7 +14,7 @@ class MediaQueryTest extends StatelessWidget {
     // var height = MediaQuery.of(context).size.height;
     return MaterialApp(
       home: Scaffold(
-          /*
+        /*
         //use LayoutBuilder to query which platform is being used
         body: LayoutBuilder(builder: (context, constraints) {
           if (constraints.maxWidth <= 500) {
@@ -27,15 +27,33 @@ class MediaQueryTest extends StatelessWidget {
         body: Column(
           children: [
             //with using expanded you let component to take all the available space
-            //with using flexible you let component flexible, like this icon have height 400
+            //with using flexible you let component flexible, like this icon have height 300
             //the icon try to fit itself in 400px but if there is not enough space it would get smaller
-            const Flexible(child: Icon(Icons.abc , size :400)),
-            Container(height: 150, color: Colors.red,),
-            Container(height: 150, color: Colors.black,),
-            Container(height: 150, color: Colors.blue,),
+            const Flexible(
+                //with using fittedBox component fit in its allowed space which its parent (flexible) gives it
+                child: FittedBox(child: Icon(Icons.ac_unit, size: 300))),
+            Container(
+              height: 150,
+              color: Colors.red,
+              child: const FittedBox(
+                //icon can't exceed the default size with boxFit.scaleDown
+                fit: BoxFit.scaleDown,
+                child: Icon(Icons.abc),
+              ),
+            ),
+            Container(
+              height: 150,
+              color: Colors.yellow,
+              //with the use of fittedBox you also can make component get biggest not only get smaller
+              child: const FittedBox(child: Icon(Icons.ac_unit)),
+            ),
+            Container(
+              height: 200,
+              color: Colors.blue,
+            ),
           ],
         ),
-          ),
+      ),
     );
   }
 }
