@@ -24,7 +24,7 @@ class MediaQueryTest extends StatelessWidget {
           }
         }),
 */
-        body: Column(
+        /* body: Column(
           children: [
             //with using expanded you let component to take all the available space
             //with using flexible you let component flexible, like this icon have height 300
@@ -52,7 +52,14 @@ class MediaQueryTest extends StatelessWidget {
               color: Colors.blue,
             ),
           ],
-        ),
+        ),*/
+        body: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, crossAxisSpacing: 4, mainAxisSpacing: 4),
+            itemCount: 4,
+            itemBuilder: (context, index) {
+              return const FittedBox(child: Icon(Icons.ac_unit));
+            }),
       ),
     );
   }
