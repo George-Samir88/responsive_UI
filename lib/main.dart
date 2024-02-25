@@ -14,6 +14,7 @@ class MediaQueryTest extends StatelessWidget {
     // var height = MediaQuery.of(context).size.height;
     return MaterialApp(
       home: Scaffold(
+          /*
         //use LayoutBuilder to query which platform is being used
         body: LayoutBuilder(builder: (context, constraints) {
           if (constraints.maxWidth <= 500) {
@@ -22,7 +23,19 @@ class MediaQueryTest extends StatelessWidget {
             return const DesktopLayout();
           }
         }),
-      ),
+*/
+        body: Column(
+          children: [
+            //with using expanded you let component to take all the available space
+            //with using flexible you let component flexible, like this icon have height 400
+            //the icon try to fit itself in 400px but if there is not enough space it would get smaller
+            const Flexible(child: Icon(Icons.abc , size :400)),
+            Container(height: 150, color: Colors.red,),
+            Container(height: 150, color: Colors.black,),
+            Container(height: 150, color: Colors.blue,),
+          ],
+        ),
+          ),
     );
   }
 }
