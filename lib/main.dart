@@ -60,7 +60,7 @@ class MediaQueryTest extends StatelessWidget {
             itemBuilder: (context, index) {
               return const FittedBox(child: Icon(Icons.ac_unit));
             }),*/
-        body: Align(
+        /*body: Align(
           alignment: Alignment.topCenter,
           child: AspectRatio(
             aspectRatio: 1,
@@ -68,6 +68,50 @@ class MediaQueryTest extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               color: Colors.blue,
             ),
+          ),
+        ),*/
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 100,
+              ),
+              //IntrinsicHeight is widget used when you wanna make the parent widget(row) take its height from the biggest child which contain it
+              IntrinsicHeight(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        color: Colors.red,
+                        height: 200,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              color: Colors.green,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Expanded(
+                            child: Container(
+                              color: Colors.yellow,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
