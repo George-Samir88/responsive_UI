@@ -53,13 +53,23 @@ class MediaQueryTest extends StatelessWidget {
             ),
           ],
         ),*/
-        body: GridView.builder(
+        /* body: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3, crossAxisSpacing: 4, mainAxisSpacing: 4),
             itemCount: 4,
             itemBuilder: (context, index) {
               return const FittedBox(child: Icon(Icons.ac_unit));
-            }),
+            }),*/
+        body: Align(
+          alignment: Alignment.topCenter,
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blue,
+            ),
+          ),
+        ),
       ),
     );
   }
