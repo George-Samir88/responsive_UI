@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_ui/views/custom_drawer_item.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -12,7 +13,7 @@ class CustomDrawer extends StatelessWidget {
           DrawerHeader(
             child: Icon(
               Icons.favorite_outlined,
-              size: 42,
+              size: 48,
             ),
           ),
         ],
