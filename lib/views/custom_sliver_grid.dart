@@ -8,9 +8,7 @@ class CustomSliverGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //sliverGrid.builder is used in custom scroll view
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+    return SliverGrid.builder(
       itemCount: 4,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
