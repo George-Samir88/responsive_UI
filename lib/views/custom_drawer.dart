@@ -23,8 +23,11 @@ class CustomDrawer extends StatelessWidget {
           const DrawerHeader(
             child: Icon(
               Icons.favorite_outlined,
-              size: 48,
+              size: 56,
             ),
+          ),
+          const SizedBox(
+            height: 16,
           ),
           CustomDrawerItemsListView(drawerItemModel: drawerItemModel),
         ],

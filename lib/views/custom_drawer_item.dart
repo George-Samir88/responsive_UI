@@ -10,9 +10,12 @@ class CustomDrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(drawerItemModel.iconData),
-      title: Text(
-        drawerItemModel.text,
-        style: const TextStyle(letterSpacing: 3),
+      title: Padding(
+        padding: const EdgeInsets.only(left: 16),
+        child: Text(
+          drawerItemModel.text,
+          style: const TextStyle(letterSpacing: 3),
+        ),
       ),
     );
   }

@@ -7,7 +7,7 @@ class CustomHorizontalListInTabletMode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 160,
       child: ListView.builder(
         itemBuilder: (context, index) {
           return const Padding(
