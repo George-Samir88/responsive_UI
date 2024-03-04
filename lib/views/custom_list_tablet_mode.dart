@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_ui/views/custom_item.dart';
 
-class CustomListInTabletMode extends StatelessWidget {
-  const CustomListInTabletMode({super.key});
+class CustomHorizontalListInTabletMode extends StatelessWidget {
+  const CustomHorizontalListInTabletMode({super.key});
 
   @override
   Widget build(BuildContext context) {
