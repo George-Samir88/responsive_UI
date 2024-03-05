@@ -9,12 +9,14 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16.0),
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
       child: AdaptiveLayout(
-        mobileLayout: MobileLayout(),
-        tabletLayout: TabletLayout(),
-        desktopLayout: DesktopLayout(),
+        //this change will provide context if u r using blocProvider
+        //also provide creating only the used layout only not creating all layouts
+        mobileLayout: (context) => const MobileLayout(),
+        tabletLayout: (context) => const TabletLayout(),
+        desktopLayout: (context) => const DesktopLayout(),
       ),
     );
   }

@@ -7,17 +7,18 @@ class AdaptiveLayout extends StatelessWidget {
       required this.tabletLayout,
       required this.desktopLayout});
 
-  final Widget mobileLayout, tabletLayout, desktopLayout;
+//this will return a function call back that returns a widget
+  final WidgetBuilder mobileLayout, tabletLayout, desktopLayout;
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constrains) {
       if (constrains.maxWidth < 600) {
-        return mobileLayout;
+        return mobileLayout(context);
       } else if (constrains.maxWidth < 900) {
-        return tabletLayout;
+        return tabletLayout(context);
       }
-      return ldesktopLayout;
+      return desktopLayout(context);
     });
   }
 }
